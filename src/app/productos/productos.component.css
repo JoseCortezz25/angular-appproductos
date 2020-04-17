@@ -1,0 +1,8 @@
+.seleccionado{
+  color: #00a8ff;
+}
+
+li{
+  list-style: none;
+  cursor: pointer;
+}

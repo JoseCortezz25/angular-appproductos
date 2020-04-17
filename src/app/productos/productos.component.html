@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <p class="h4 text-center">Lista de Productos: 🧱</p>
+  <li
+    *ngFor="let Producto of Articulos"
+    (click)="Seleccionar(Producto)"
+    [class.seleccionado]="Producto === ProductoSeleccionado"
+  >
+    <span class="badge">{{ Producto.id }}</span> {{ Producto.nombre }}
+  </li>
+</div>
+
+<div class="container mt-5 border">
+  <div *ngIf="ProductoSeleccionado">
+    <p class="h4 text-center">{{ ProductoSeleccionado.nombre }}</p>
+    <p class="h5">Detalles:</p>
+
+    <div><b>Id: </b>{{ ProductoSeleccionado.id }}</div>
+    <div>
+      <label
+        ><b>Nombre del producto: </b>
+        <input [(ngModel)]="ProductoSeleccionado.nombre" placeholder="name" />
+      </label>
+    </div>
+    <div><b>Precio: </b>{{ ProductoSeleccionado.precio }}</div>
+    <div><b>Cantidad existente: </b>{{ ProductoSeleccionado.cantidad }}</div>
+  </div>
+</div>
+
+
